@@ -1,11 +1,18 @@
 <?php 
-    require_once "game.php";
+    require_once "Game.php";
 
     $game1 = new Game("1","Starcraft 2",8);
     $game2 = new Game("2","Among Us",10);
     $game3 = new Game("3","Valorant",10);
 
-    $games=[$game1,$game2,$game3];
+    require_once "GameManager.php";
+    $gameManager = new GameManager;
+
+    $gameManager->addGame($game1);
+    $gameManager->addGame($game2);
+    $gameManager->addGame($game3);
+
+    $games = $gameManager -> getGames();
 
 ob_start() ?>
 
