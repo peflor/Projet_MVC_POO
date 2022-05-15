@@ -1,6 +1,7 @@
 <?php
+require_once "Manager.php";
 
-class GameManager{
+class GameManager extends Manager{
 
     private $games;
 
