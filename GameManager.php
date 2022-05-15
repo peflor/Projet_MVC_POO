@@ -1,5 +1,6 @@
 <?php
 require_once "Manager.php";
+require_once "Game.php";
 
 class GameManager extends Manager{
 
@@ -16,14 +17,17 @@ class GameManager extends Manager{
     public function loadGames(){
         $req = $this->getBdd()->prepare("SELECT * FROM games");
         $req->execute();
-        $myGames = $req->fetchAll();
+        $myGames = $req->fetchAll(PDO::FETCH_ASSOC);
         $req->closeCursor();
-        echo "<pre>";
-        print_r($myGames);
-        echo "</pre>";
+
+        foreach($myGames as $game){
+            $g = new Game($game['id'], $game['title'], $game['nb_players']);
+            $this->addGame($g);
+        }
     }
 
-}
+   
 
+}
 
 ?>
