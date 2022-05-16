@@ -64,6 +64,19 @@ class UserManager extends Manager{
             $this->getUserById($id)->setName($prenom);
         }
     }
+
+    public function deleteUserBD($id){
+        $req = "DELETE FROM users WHERE id = :id";
+        $statement = $this->getBdd()->prepare($req);
+        $statement->bindValue(":id",$id,PDO::PARAM_INT);
+        $result = $statement->execute();
+        $statement->closeCursor();
+
+        if($result){
+            $user = $this->getUserByID($id);
+            unset($user);
+        }
+    }
   
 }
 

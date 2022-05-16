@@ -32,4 +32,12 @@ class UserController {
         $this->userManager->editUserDB($_POST['id-user'], $_POST['nom'], $_POST['prenom']);
         header('Location:'. URL . "users");
     }
+
+    public function deleteUser($id){
+        $this->userManager->deleteUserBD($id);
+        header("Location:". URL . "users");
+    }
+
+    
+
 }

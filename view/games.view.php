@@ -14,7 +14,11 @@
             <td><?= $game->getTitle()?></td>
             <td><?= $game->getnbPlayers()?></td>
             <td><a href="<?= URL ?>games/edit/<?= $game->getId() ?>"><i class="fas fa-edit"></i></a></td>
-            <td><a href=""><i class="fas fa-trash"></i></a></td>
+            <td>
+                <form action="<?= URL ?>games/delete/<?= $game->getID() ?>" method="post" onSubmit=" return confirm('Êtes-vous certain de vouloir supprimer ce jeu ?')">
+                    <button class="btn" type="submit"><i class="fas fa-trash"></i></button>
+                </form>
+            </td>
         </tr>
         <?php endforeach; ?>
     </tbody>

@@ -28,7 +28,7 @@ if(empty($_GET['page'])){
             } else if($url[1] === "editvalid"){
                 $gameController->editGameValidation();
             } else if($url[1] === "delete"){
-                echo "supprimer un jeu";
+                $gameController->deleteGame($url[2]);
             }
         break;
         case "users" : 
@@ -43,7 +43,7 @@ if(empty($_GET['page'])){
             } else if($url[1] === "editvalid"){
                 $userController->editUserValidation();
             } else if($url[1] === "delete"){
-                echo "supprimer un utilisateur";
+                $userController->deleteUser($url[2]);
             }
         break;
     }

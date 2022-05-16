@@ -33,5 +33,12 @@ class GameController {
         $this->gameManager->editGameDB($_POST['id-game'], $_POST['title'], $_POST['nbPlayers']);
         header('Location:'. URL . "games");
     }
+
+    public function deleteGame($id){
+        $this->gameManager->deleteGameBD($id);
+        header("Location:". URL . "games");
+    }
+
+    
     
 }

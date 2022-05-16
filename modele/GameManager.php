@@ -65,6 +65,19 @@ class GameManager extends Manager{
         }
     }
 
+    public function deleteGameBD($id){
+        $req = "DELETE FROM games WHERE id = :id";
+        $statement = $this->getBdd()->prepare($req);
+        $statement->bindValue(":id",$id,PDO::PARAM_INT);
+        $result = $statement->execute();
+        $statement->closeCursor();
+
+        if($result){
+            $game = $this->getGameByID($id);
+            unset($game);
+        }
+    }
+
    
 
 }
