@@ -5,6 +5,9 @@ define("URL", str_replace("index.php","",(isset($_SERVER['HTTPS']) ? "https" : "
 require_once "controller/GameController.php";
 $gameController = new GameController;
 
+require_once "controller/UserController.php";
+$userController = new UserController;
+
 if(empty($_GET['page'])){
     require_once "./view/home.view.php";
 }else {
@@ -13,6 +16,8 @@ if(empty($_GET['page'])){
         case "accueil" : require_once "./view/home.view.php";
         break;
         case "games" : $gameController->displayGames();
+        break;
+        case "users" : $userController->displayUsers();
         break;
     }
 }
