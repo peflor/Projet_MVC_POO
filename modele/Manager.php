@@ -2,19 +2,19 @@
 
 abstract class Manager {
 
-    private static $pdo;
+    private $bdd;
 
-    private static function setBdd(){
-        self::$pdo = new PDO("mysql:host=localhost;dbname=game_x;charset=utf8","root","");
-        self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+    private function setBdd(){
+        $this->bdd = new PDO("mysql:host=localhost;dbname=game_x;charset=utf8","root","");
+        $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
     }
 
     protected function getBdd(){
 
-        if(self::$pdo === null){
-            self::setBdd();
+        if($this->setBdd() === null){
+            $this->setBdd();
         }
-        return self::$pdo;
+        return $this->bdd;
     }
 }
 
