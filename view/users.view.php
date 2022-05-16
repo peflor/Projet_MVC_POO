@@ -20,11 +20,11 @@
     </tbody>
 </table>
 
-<a href="" class="btn btn-success w-25 d-block m-auto">Ajouter un utilisateur</a>
+<a href="<?= URL ?>users/add" class="btn btn-success w-25 d-block m-auto">Ajouter un utilisateur</a>
 
 <?php 
     $content= ob_get_clean();
-    $title="Liste des utilisteurs";
+    $title="Liste des utilisateurs";
     require_once "base.html.php";
 
 ?>

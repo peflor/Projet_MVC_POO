@@ -13,4 +13,8 @@ class UserController {
         $users = $this->userManager->getUsers();
         require_once "view/users.view.php";
     }
+
+    public function newUserForm(){
+        require_once "view/new.user.view.php";
+    }
 }

@@ -20,7 +20,7 @@
     </tbody>
 </table>
 
-<a href="" class="btn btn-success w-25 d-block m-auto">Ajouter un jeu</a>
+<a href="<?= URL ?>games/add" class="btn btn-success w-25 d-block m-auto">Ajouter un jeu</a>
 
 <?php 
     $content= ob_get_clean();

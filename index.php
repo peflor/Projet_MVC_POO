@@ -20,7 +20,7 @@ if(empty($_GET['page'])){
             if(empty($url[1])){
                 $gameController->displayGames();
             } else if($url[1] === "add"){
-                echo "créer un jeu";
+                $gameController->newGameForm();
             } else if($url[1] === "edit"){
                 echo "modifier un jeu";
             } else if($url[1] === "delete"){
@@ -31,7 +31,7 @@ if(empty($_GET['page'])){
             if(empty($url[1])){
                 $userController->displayUsers();
             } else if($url[1] === "add"){
-                echo "créer un utilisateur";
+                $userController->newUserForm();
             } else if($url[1] === "edit"){
                 echo "modifier un utilisateur";
             } else if($url[1] === "delete"){
