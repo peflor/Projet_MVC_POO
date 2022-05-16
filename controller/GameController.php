@@ -1,6 +1,6 @@
 <?php 
 
-require_once "GameManager.php";
+require_once "modele/GameManager.php";
 class GameController {
     private $gameManager;
 
