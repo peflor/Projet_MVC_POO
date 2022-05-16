@@ -21,6 +21,7 @@ class GameController {
     public function newGameValidation(){
         $this->gameManager->newGameDB($_POST['title'],$_POST['nbPlayers']);
         header('Location:'. URL . "games");
+        
     }
 
     
