@@ -24,7 +24,7 @@ if(empty($_GET['page'])){
             } else if($url[1] === "gvalid"){
                 $gameController->newGameValidation();
             } else if($url[1] === "edit"){
-                echo "modifier un jeu";
+                $gameController->editGameForm($url[2]);
             } else if($url[1] === "delete"){
                 echo "supprimer un jeu";
             }
@@ -37,7 +37,7 @@ if(empty($_GET['page'])){
             } else if($url[1] === "uvalid"){
                 $userController->newUserValidation();
             } else if($url[1] === "edit"){
-                echo "modifier un utilisateur";
+                $userController->editUserForm($url[2]);
             } else if($url[1] === "delete"){
                 echo "supprimer un utilisateur";
             }

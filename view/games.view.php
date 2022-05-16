@@ -13,7 +13,7 @@
         <tr>
             <td><?= $game->getTitle()?></td>
             <td><?= $game->getnbPlayers()?></td>
-            <td><a href=""><i class="fas fa-edit"></i></a></td>
+            <td><a href="<?= URL ?>games/edit/<?= $game->getId() ?>"><i class="fas fa-edit"></i></a></td>
             <td><a href=""><i class="fas fa-trash"></i></a></td>
         </tr>
         <?php endforeach; ?>

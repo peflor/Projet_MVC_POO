@@ -22,4 +22,9 @@ class UserController {
         $this->userManager->newUserDB($_POST['nom'],$_POST['prenom']);
         header('Location:'. URL . "users");
     }
+
+    public function editUserForm($id){
+        $user = $this->userManager->getUserById($id);
+        require_once "view/edit.user.view.php";
+    }
 }

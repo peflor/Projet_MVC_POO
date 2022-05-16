@@ -13,7 +13,7 @@
         <tr>
             <td><?= $user->getFullname()?></td>
             <td><?= $user->getName()?></td>
-            <td><a href=""><i class="fas fa-edit"></i></a></td>
+            <td><a href="<?= URL ?>users/edit/<?= $user->getId() ?>"><i class="fas fa-edit"></i></a></td>
             <td><a href=""><i class="fas fa-trash"></i></a></td>
         </tr>
         <?php endforeach; ?>

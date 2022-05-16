@@ -39,7 +39,14 @@ class GameManager extends Manager{
             $game = new Game($this->getBdd()->lastInsertId(),$title,$nbPlayers);
             $this->addGame($game);
         }
-
+    }
+    
+    public function getGameById($id){
+        foreach($this->games as $game){
+            if($game->getId() == $id){
+                return $game;
+            }
+        }
     }
 
    

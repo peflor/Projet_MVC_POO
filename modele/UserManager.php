@@ -39,7 +39,14 @@ class UserManager extends Manager{
             $user = new User($this->getBdd()->lastInsertId(),$nom,$prenom);
             $this->addUser($user);
         }
+    }
 
+    public function getUserById($id){
+        foreach($this->users as $user){
+            if($user->getId() == $id){
+                return $user;
+            }
+        }
     }
   
 }
