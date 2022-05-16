@@ -48,6 +48,22 @@ class UserManager extends Manager{
             }
         }
     }
+
+    public function editUserDB($id,$nom,$prenom){
+        $req= "UPDATE users SET nom = :nom, prenom = :prenom WHERE id = :id";
+        $statement = $this->getBdd()->prepare($req);
+        $statement->bindValue(":id",$id,PDO::PARAM_INT);
+        $statement->bindValue(":nom",$nom,PDO::PARAM_STR);
+        $statement->bindValue(":prenom",$prenom,PDO::PARAM_STR);
+        $result = $statement -> execute();
+        $statement->closeCursor();
+
+
+        if($result){
+            $this->getUserById($id)->setFullname($nom);
+            $this->getUserById($id)->setName($prenom);
+        }
+    }
   
 }
 

@@ -27,4 +27,9 @@ class UserController {
         $user = $this->userManager->getUserById($id);
         require_once "view/edit.user.view.php";
     }
+
+    public function editUserValidation(){
+        $this->userManager->editUserDB($_POST['id-user'], $_POST['nom'], $_POST['prenom']);
+        header('Location:'. URL . "users");
+    }
 }
