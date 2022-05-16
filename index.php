@@ -11,13 +11,32 @@ $userController = new UserController;
 if(empty($_GET['page'])){
     require_once "./view/home.view.php";
 }else {
-    $url = explode("/", filter_var($_GET['page']), FILTER_SANITIZE_URL);    
-    switch($_GET['page']){
+    $url = explode("/", filter_var($_GET['page']), FILTER_SANITIZE_URL);
+    // var_dump($url[1]);    
+    switch($url[0]){
         case "accueil" : require_once "./view/home.view.php";
         break;
-        case "games" : $gameController->displayGames();
+        case "games" :
+            if(empty($url[1])){
+                $gameController->displayGames();
+            } else if($url[1] === "add"){
+                echo "créer un jeu";
+            } else if($url[1] === "edit"){
+                echo "modifier un jeu";
+            } else if($url[1] === "delete"){
+                echo "supprimer un jeu";
+            }
         break;
-        case "users" : $userController->displayUsers();
+        case "users" : 
+            if(empty($url[1])){
+                $userController->displayUsers();
+            } else if($url[1] === "add"){
+                echo "créer un utilisateur";
+            } else if($url[1] === "edit"){
+                echo "modifier un utilisateur";
+            } else if($url[1] === "delete"){
+                echo "supprimer un utilisateur";
+            }
         break;
     }
 }
