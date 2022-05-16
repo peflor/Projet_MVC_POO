@@ -1,10 +1,11 @@
-<?php ob_start() ?>
-
-<p>Accueil - Hello World</p>
-
-
 <?php 
-    $content=ob_get_clean();
-    $title="Bienvenue chez Game-X";
-    require_once "base.html.php"
-?>
+
+if(empty($_GET['page'])){
+    require_once "./view/home.view.php";
+}else {
+    switch($GET['page']){
+        case "accueil" : require_once "view/home.view.php";
+        break;
+    }
+}
+
