@@ -17,4 +17,11 @@ class GameController {
     public function newGameForm(){
         require_once "view/new.game.view.php";
     }
+
+    public function newGameValidation(){
+        $this->gameManager->newGameDB($_POST['title'],$_POST['nbPlayers']);
+        header('Location:'. URL . "games");
+    }
+
+    
 }

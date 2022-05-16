@@ -25,6 +25,22 @@ class UserManager extends Manager{
             $this->addUser($u);
         }
     }
+
+    public function newUserDB($nom,$prenom){
+        $req = "INSERT INTO users (nom, prenom
+                Values (:nom, :prenom)";
+        $statement = $this->getBdd()->prepare($req);
+        $statement ->bindValue(":nom",$nom, PDO::PARAM_STR);
+        $statement->bindValue(":prenom",$prenom, PDO::PARAM_STR);
+        $result = $statement->execute();
+        $statement->closeCursor();
+
+        if($result){
+            $user = new User($this->getBdd()->lastInsertId(),$nom,$prenom);
+            $this->addUser($user);
+        }
+
+    }
   
 }
 

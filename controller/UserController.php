@@ -17,4 +17,9 @@ class UserController {
     public function newUserForm(){
         require_once "view/new.user.view.php";
     }
+
+    public function newUserValidation(){
+        $this->userManager->newUserDB($_POST['nom'],$_POST['prenom']);
+        header('Location:'. URL . "users");
+    }
 }
