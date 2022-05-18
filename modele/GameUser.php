@@ -1,20 +1,20 @@
 <?php
 
 class GameUser {
-    // private int $id;
+    private int $id;
     private string $nom;
     private string $prenom;
     private string $title;
-    // private int $nbPlayers;
-    // private int $users_id;
+    private int $nbPlayers;
+    private int $users_id;
 
-    public function __construct($nom,$prenom,$title){
-        // $this->id = $id;
+    public function __construct($id,$nom,$prenom,$title,$nbPlayers,$users_id){
+        $this->id = $id;
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->title = $title;
-        // $this->nbPlayers = $nbPlayers;
-        // $this->users_id = $users_id;
+        $this->nbPlayers = $nbPlayers;
+        $this->users_id = $users_id;
     }
 
     /**

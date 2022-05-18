@@ -1,8 +1,8 @@
 <?php ob_start();
-require_once "modele/GameUserManager.php";
+// require_once "modele/GameUserManager.php";
 // $gameUserController = new GameUserController;
 // $gameUserController->displayGamesUsers();
-$test=new GameUserManager();
+// $test=new GameUserManager();
 // $gamesUsers = $test->loadGamesUsers();
 ?>
 
@@ -15,14 +15,13 @@ $test=new GameUserManager();
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($gamesUsers as $gameUser) : ?>
+    <?php foreach ($gamesUsers as $gameUser) : ?>
         <tr>
-            <td><?= $gameUser?></td>
-            <td><?= $gameUser?></td>
-            <td><?= $gameUser?></td>
+            <td><?= $gameUser->getTitle()?></td>
+            <td><?= $gameUser->getNom()?></td>
+            <td><?= $gameUser->getPrenom()?></td>            
         </tr>
         <?php endforeach; ?>
-    </tbody>
 </table>
 
 

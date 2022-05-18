@@ -8,6 +8,9 @@ $gameController = new GameController;
 require_once "controller/UserController.php";
 $userController = new UserController;
 
+// require_once "controller/GameUserController.php";
+// $gameUserController = new GameUserController;
+
 if(empty($_GET['page'])){
     require_once "./view/home.view.php";
 }else {

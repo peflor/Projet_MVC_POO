@@ -8,8 +8,8 @@ class GameUserManager extends Manager{
     
     private $gameUser;
 
-    public function addGameUser($gameUser){
-        $this->gameUser[] = $gameUser;
+    public function addGameUser($gUser){
+        $this->gameUser[] = $gUser;
     }
 
     public function getGameUser(){
@@ -21,12 +21,12 @@ class GameUserManager extends Manager{
         $req->execute();
         $myUsersGames = $req->fetchAll(PDO::FETCH_ASSOC);
         $req->closeCursor();
-        $this->gameUser = $myUsersGames;
-        var_dump($this->gameUser);
+        // $this->gameUser = $myUsersGames;
+        // var_dump($this->gameUser);
         
-        foreach($myUsersGames as $game){
-            $g = new GameUser($game['id'], $game['title'], $game['nb_players']);
-            $this->addGameUser($g);
+        foreach($myUsersGames as $gameUser){
+            $gU = new GameUser($gameUser['id'], $gameUser['nom'], $gameUser['prenom'], $gameUser['title'], $gameUser['nb_players'], $gameUser['users_id']);
+            $this->addGameUser($gU);
         }
     }
     
