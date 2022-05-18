@@ -7,7 +7,7 @@ require_once "GameUser.php";
 class GameUserManager extends Manager{
     
     private $gameUser;
-    private $gameNoUser;
+    
 
     public function addGameUser($gUser){
         $this->gameUser[] = $gUser;

@@ -2,8 +2,7 @@
 
 require_once "modele/GameUserManager.php";
 class GameUserController {
-    private $gameUserManager;
-    private $gameNoUserManager;
+    private $gameUserManager;    
 
     public function __construct(){
         $this->gameUserManager = new GameUserManager;

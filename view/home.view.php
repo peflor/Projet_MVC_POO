@@ -40,14 +40,14 @@ $gameController = new GameController;
     </div>
     </div>
 </div>
-<div class="col-4">
+<!-- <div class="col-4">
     <div class="card text-white bg-secondary mb-3 shadow" style="max-width: 20rem;">
     <div class="card-header text-center">Nombre d'associations</div>
     <div class="card-body">
         <h4 class="card-title text-center"><?= count($gamesUsers) ?></h4>
     </div>
     </div>
-</div>
+</div> -->
 
 
 
