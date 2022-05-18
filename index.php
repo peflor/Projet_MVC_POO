@@ -19,7 +19,8 @@ if(empty($_GET['page'])){
     switch($url[0]){
         case "accueil" : 
             if(empty($url[1])){
-                $gameUserController->displayGamesUsers();
+                $gameUserController->displayGamesUsers();                
+                                
             } 
         break;
         case "games" :

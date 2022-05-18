@@ -7,6 +7,7 @@ require_once "GameUser.php";
 class GameUserManager extends Manager{
     
     private $gameUser;
+    private $gameNoUser;
 
     public function addGameUser($gUser){
         $this->gameUser[] = $gUser;
@@ -21,7 +22,6 @@ class GameUserManager extends Manager{
         $req->execute();
         $myUsersGames = $req->fetchAll(PDO::FETCH_ASSOC);
         $req->closeCursor();
-        // $this->gameUser = $myUsersGames;
         // var_dump($this->gameUser);
         
         foreach($myUsersGames as $gameUser){
@@ -29,6 +29,9 @@ class GameUserManager extends Manager{
             $this->addGameUser($gU);
         }
     }
+
+    
+    
     
     
 }

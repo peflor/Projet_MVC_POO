@@ -3,6 +3,7 @@
 require_once "modele/GameUserManager.php";
 class GameUserController {
     private $gameUserManager;
+    private $gameNoUserManager;
 
     public function __construct(){
         $this->gameUserManager = new GameUserManager;
@@ -13,6 +14,10 @@ class GameUserController {
         $gamesUsers = $this->gameUserManager->getGameUser();
         require_once "view/home.view.php";
     }
+
+    
+
+   
 
     // public function newGameForm(){
     //     require_once "view/new.game.view.php";
