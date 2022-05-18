@@ -15,9 +15,12 @@ if(empty($_GET['page'])){
     require_once "./view/home.view.php";
 }else {
     $url = explode("/", filter_var($_GET['page']), FILTER_SANITIZE_URL);
-    // var_dump($url[1]);    
+      
     switch($url[0]){
-        case "accueil" : require_once "./view/home.view.php";
+        case "accueil" : 
+            if(empty($url[1])){
+                $gameUserController->displayGamesUsers();
+            } 
         break;
         case "games" :
             if(empty($url[1])){
@@ -49,11 +52,7 @@ if(empty($_GET['page'])){
                 $userController->deleteUser($url[2]);
             }
         break;
-        case "gamesusers" : 
-            if(empty($url[1])){
-                $gameUserController->displayGamesUsers();
-            } 
-        break;
+        
     }
 }
 
