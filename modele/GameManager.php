@@ -5,6 +5,7 @@ require_once "Game.php";
 class GameManager extends Manager{
 
     private $games;
+  
 
     public function addGame($game){
         $this->games[] = $game;
@@ -19,7 +20,6 @@ class GameManager extends Manager{
         $req->execute();
         $myGames = $req->fetchAll(PDO::FETCH_ASSOC);
         $req->closeCursor();
-
         // var_dump($myGames);
 
         foreach($myGames as $game){
@@ -28,6 +28,8 @@ class GameManager extends Manager{
 
         }
     }
+
+
 
     public function newGameDB($title,$nbPlayers){
         $req = "INSERT INTO games (title, nb_players)

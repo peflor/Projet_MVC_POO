@@ -11,8 +11,9 @@ class GameController {
 
     public function displayGames(){
         $games = $this->gameManager->getGames();
-        require_once "view/games.view.php";
+        require_once "view/games.view.php";        
     }
+
 
     // public function countGames(){
     //     $games1 = $this->gameManager->getGames();

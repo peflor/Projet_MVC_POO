@@ -23,7 +23,7 @@ if(empty($_GET['page'])){
             if(empty($url[1])){
                 $gameController->displayGames();
             } else if($url[1] === "add"){
-                $gameController->newGameForm();
+                $gameController->newGameForm();                
             } else if($url[1] === "gvalid"){
                 $gameController->newGameValidation();
             } else if($url[1] === "edit"){
@@ -37,7 +37,7 @@ if(empty($_GET['page'])){
         case "users" : 
             if(empty($url[1])){
                 $userController->displayUsers();
-            } else if($url[1] === "add"){
+            } else if($url[1] === "add"){               
                 $userController->newUserForm();
             } else if($url[1] === "uvalid"){
                 $userController->newUserValidation();
