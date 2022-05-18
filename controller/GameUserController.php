@@ -1,4 +1,4 @@
-<!-- <?php 
+<?php 
 
 require_once "modele/GameUserManager.php";
 class GameUserController {
@@ -11,7 +11,7 @@ class GameUserController {
 
     public function displayGamesUsers(){
         $gamesUsers = $this->gameUserManager->getGameUser();
-        require_once "view/home.view.php";
+        require_once "view/gamesusers.view.php";
     }
 
     // public function newGameForm(){

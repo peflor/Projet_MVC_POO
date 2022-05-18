@@ -8,8 +8,8 @@ $gameController = new GameController;
 require_once "controller/UserController.php";
 $userController = new UserController;
 
-// require_once "controller/GameUserController.php";
-// $gameUserController = new GameUserController;
+require_once "controller/GameUserController.php";
+$gameUserController = new GameUserController;
 
 if(empty($_GET['page'])){
     require_once "./view/home.view.php";
@@ -48,6 +48,11 @@ if(empty($_GET['page'])){
             } else if($url[1] === "delete"){
                 $userController->deleteUser($url[2]);
             }
+        break;
+        case "gamesusers" : 
+            if(empty($url[1])){
+                $gameUserController->displayGamesUsers();
+            } 
         break;
     }
 }
