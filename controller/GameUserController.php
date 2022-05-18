@@ -11,13 +11,10 @@ class GameUserController {
 
     public function displayGamesUsers(){
         $gamesUsers = $this->gameUserManager->getGameUser();
-        require_once "view/gamesusers.view.php";
+        require_once "view/gamesusers.view.php";        
     }
 
-    public function displayNoGamesUsers(){
-        $gamesNoUsers = $this->gameUserManager->getNoGameUser();
-        require_once "view/gamesusers.view.php";
-    }
+   
     
 
    

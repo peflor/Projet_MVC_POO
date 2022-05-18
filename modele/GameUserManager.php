@@ -23,34 +23,22 @@ class GameUserManager extends Manager{
         $req->execute();
         $myUsersGames = $req->fetchAll(PDO::FETCH_ASSOC);
         $req->closeCursor();
-        // var_dump($this->gameUser);
+        
+
+        // $req2 = $this->getBdd()->prepare("SELECT * FROM users INNER JOIN games WHERE users.id = games.users_id OR games.users_id = NULL ");
+        // $req2->execute();
+        // $myUsersGames2 = $req2->fetchAll(PDO::FETCH_ASSOC);
+        // $req2->closeCursor();
+        
+        // var_dump($myUsersGames2);
         
         foreach($myUsersGames as $gameUser){
             $gU = new GameUser($gameUser['id'], $gameUser['nom'], $gameUser['prenom'], $gameUser['title'], $gameUser['nb_players'], $gameUser['users_id']);
             $this->addGameUser($gU);
         }
+
     }
 
-    public function addNoGameUser($gUser){
-        $this->gameNoUser[] = $gUser;
-    }
-
-    public function getNoGameUser(){
-        return $this->gameNoUser;
-    }
-
-    public function loadGamesNoUsers(){
-        $req = $this->getBdd()->prepare("SELECT * FROM users INNER JOIN games WHERE users.id = NULL");
-        $req->execute();
-        $myUsersNoGames = $req->fetchAll(PDO::FETCH_ASSOC);
-        $req->closeCursor();
-        // var_dump($this->gameUser);
-        
-        foreach($myUsersNoGames as $gameUser){
-            $gU = new GameUser($gameUser['id'], $gameUser['nom'], $gameUser['prenom'], $gameUser['title'], $gameUser['nb_players'], $gameUser['users_id']);
-            $this->addNoGameUser($gU);
-        }
-    }
     
     
     

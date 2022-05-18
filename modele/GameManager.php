@@ -20,9 +20,12 @@ class GameManager extends Manager{
         $myGames = $req->fetchAll(PDO::FETCH_ASSOC);
         $req->closeCursor();
 
+        // var_dump($myGames);
+
         foreach($myGames as $game){
             $g = new Game($game['id'], $game['title'], $game['nb_players']);
             $this->addGame($g);
+
         }
     }
 

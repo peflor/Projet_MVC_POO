@@ -51,8 +51,9 @@ if(empty($_GET['page'])){
         break;
         case "gamesusers" :
             if(empty($url[1])){
-                $gameUserController->displayGamesUsers();         
-                $gameUserController->displayNoGamesUsers();         
+                $gameUserController->displayGamesUsers();
+                // $gameController->countGames();         
+                        
             } 
         
     }

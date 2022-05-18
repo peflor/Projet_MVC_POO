@@ -38,24 +38,15 @@
     </div>
     </div>
 </div>
-<table class="table table-hover text-center">
-    <thead class="table-dark">
-        <tr>
-            <th>Titre</th>
-            <th>Nom du joueur</th>
-            <th>Prenom du joueur</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach ($gamesNoUsers as $gameNoUser) : ?>
-        <tr>
-            <td><?= $gameNoUser->getTitle()?></td>
-            <td><?= $gameNoUser->getNom()?></td>
-            <td><?= $gameNoUser->getPrenom()?></td>            
-        </tr>
-        <?php endforeach; ?>
-    </tbody>
-</table>
+<!-- <div class="col-4">
+    <div class="card text-white bg-secondary mb-3 shadow" style="max-width: 20rem;">
+    <div class="card-header text-center">Nombre d'associations</div>
+    <div class="card-body">
+        <h4 class="card-title text-center"><?php $games1 ?></h4>
+    </div>
+    </div>
+</div> -->
+
 
 
 

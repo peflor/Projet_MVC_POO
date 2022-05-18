@@ -15,8 +15,8 @@ class GameController {
     }
 
     // public function countGames(){
-    //     $games = $this->gameManager->getGames();
-    //     echo count($games);
+    //     $games1 = $this->gameManager->getGames();
+    //     echo count($games1);
         
     // }
 
