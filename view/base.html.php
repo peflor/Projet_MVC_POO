@@ -28,7 +28,10 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?= URL ?>users">Joueurs</a>
-        </li>        
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link" href="<?= URL ?>gamesusers">Jeux & Joueurs</a>
+        </li>         
       </ul>
     </div>
   </div>

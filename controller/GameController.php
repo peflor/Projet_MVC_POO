@@ -14,11 +14,11 @@ class GameController {
         require_once "view/games.view.php";
     }
 
-    public function countGames(){
-        $games = $this->gameManager->getGames();
-        echo count($games);
+    // public function countGames(){
+    //     $games = $this->gameManager->getGames();
+    //     echo count($games);
         
-    }
+    // }
 
     
     public function newGameForm(){

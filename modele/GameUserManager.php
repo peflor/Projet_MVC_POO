@@ -7,6 +7,7 @@ require_once "GameUser.php";
 class GameUserManager extends Manager{
     
     private $gameUser;
+    private $gameNoUser;
     
 
     public function addGameUser($gUser){
@@ -30,7 +31,26 @@ class GameUserManager extends Manager{
         }
     }
 
-    
+    public function addNoGameUser($gUser){
+        $this->gameNoUser[] = $gUser;
+    }
+
+    public function getNoGameUser(){
+        return $this->gameNoUser;
+    }
+
+    public function loadGamesNoUsers(){
+        $req = $this->getBdd()->prepare("SELECT * FROM users INNER JOIN games WHERE users.id = NULL");
+        $req->execute();
+        $myUsersNoGames = $req->fetchAll(PDO::FETCH_ASSOC);
+        $req->closeCursor();
+        // var_dump($this->gameUser);
+        
+        foreach($myUsersNoGames as $gameUser){
+            $gU = new GameUser($gameUser['id'], $gameUser['nom'], $gameUser['prenom'], $gameUser['title'], $gameUser['nb_players'], $gameUser['users_id']);
+            $this->addNoGameUser($gU);
+        }
+    }
     
     
     

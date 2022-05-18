@@ -17,11 +17,7 @@ if(empty($_GET['page'])){
     $url = explode("/", filter_var($_GET['page']), FILTER_SANITIZE_URL);
       
     switch($url[0]){
-        case "accueil" : 
-            if(empty($url[1])){
-                $gameUserController->displayGamesUsers();                
-                                
-            } 
+        case "accueil" : require_once "./view/home.view.php";
         break;
         case "games" :
             if(empty($url[1])){
@@ -53,6 +49,11 @@ if(empty($_GET['page'])){
                 $userController->deleteUser($url[2]);
             }
         break;
+        case "gamesusers" :
+            if(empty($url[1])){
+                $gameUserController->displayGamesUsers();         
+                $gameUserController->displayNoGamesUsers();         
+            } 
         
     }
 }
